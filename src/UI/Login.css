@@ -1,4 +1,5 @@
 body {
+  height: 40vh;
   margin: 0;
   padding: 0;
   display: flex;
@@ -38,7 +39,7 @@ body {
 }
 
 .enclosing {
-  height: 35rem;
+  height: 50rem;
   width: 42rem;
   /* width: 100%; */
   display: flex;
@@ -56,13 +57,15 @@ body {
   gap: 1rem;
 }
 
-.title {
+.enclosing p{
+  width: 38vh;
   font-family: "Comfortaa";
-  display: block;
-  width: 20.5rem;
-  /* width: 50%; */
+  font-style: normal;
   font-weight: 400;
   font-size: 36px;
   line-height: 40px;
+  display: flex;
+  align-items: center;
   letter-spacing: -0.015em;
+  color: #000000;
 }
