@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import "./Login.css";
+import classes from "./Login.module.css";
 
 const Login = (event) => {
   const navigate = useNavigate();
@@ -25,25 +25,25 @@ const Login = (event) => {
     }
   };
   return (
-    <div className={"enclosing"}>
+    <div className={classes.enclosing}>
       <p>Log in</p>
-      <form className={"form"} method="get">
+      <form className={classes.form} method="get">
         <input
           id="email"
-          className={"input"}
+          className={classes.input}
           type="email"
           placeholder="Enter Username"
           name="uname"
           required
         />
         <input
-          className={"input"}
+          className={classes.input}
           type="password"
           placeholder="Enter Password"
           name="psw"
         />
         <input
-          className={"button"}
+          className={classes.button}
           id="button"
           type="submit"
           value="Log In"

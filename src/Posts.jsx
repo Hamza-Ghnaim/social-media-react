@@ -1,10 +1,8 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Discover from "./Discover";
-import Header from "./Header";
-// import "./Posts.css";
+import classes from "./Posts.module.css";
 const Posts = () => {
   const user = JSON.parse(localStorage.userinfo);
-  //   console.log(user);
   const [PostsArray, setPostsArray] = useState([]);
   useEffect(() => {
     const Fetch = async () => {
@@ -13,17 +11,18 @@ const Posts = () => {
       );
       const Response = await response.json();
       setPostsArray(Response);
-      //   console.log(PostsArray);
     };
     Fetch();
   }, []);
 
   return (
     <Fragment>
-      <div className={"enclosing"}>
-        <div className={"container"}>
-          <h1 className={"title"}>Discover</h1>
-          <Header />
+      <div className={classes.enclosing}>
+        <div className={classes.container}>
+          <h1 className={classes.title}>Discover</h1>
+          <p className={classes.paragraph}>
+            <strong>WHAT'S NEW TODAY</strong>
+          </p>
         </div>
       </div>
       <Discover posts={PostsArray} />
