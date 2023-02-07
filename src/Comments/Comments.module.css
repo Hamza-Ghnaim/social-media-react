@@ -57,8 +57,8 @@ body {
 }
 
 .posts_div img {
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   padding-right: 5px;
 }
 
@@ -141,6 +141,13 @@ h5 {
   line-height: 18px;
   letter-spacing: 0.15px;
   color: #000000;
+}
+
+.Posts_comment_holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
 }
 
 .comment {

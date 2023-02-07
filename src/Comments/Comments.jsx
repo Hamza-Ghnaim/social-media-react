@@ -48,7 +48,7 @@ const Comments = () => {
           </p>
           <hr id="hr1" class={classes.hr1} />
           <div className={classes.viewallCOMMENTS}>See Comments</div>
-          <div>
+          <div className={classes.Posts_comment_holder}>
             <img src={Vector} alt="img" />
             <input
               id="comment"
