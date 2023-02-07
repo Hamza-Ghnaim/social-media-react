@@ -80,6 +80,7 @@ h5 {
   margin: 0;
 }
 .userINFO {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -93,19 +94,19 @@ h5 {
   padding-bottom: 50px;
 }
 .userNAMES {
-  width: 100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
 }
 .commentorNAMES {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
+  /* display: inline-block; */
+  width: 90vh;
+  /* height: 100%; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: left; */
 }
 
 .name {

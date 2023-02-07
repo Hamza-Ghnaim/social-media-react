@@ -6,6 +6,7 @@ import Vector from "../Posts/Vector.png";
 import classes from "./Comments.module.css";
 
 const Comments = () => {
+  const user = JSON.parse(localStorage.userinfo);
   const [comments, setComments] = useState([]);
   const [searchParams] = useSearchParams();
   const postID = +searchParams.get("postID");
@@ -34,13 +35,17 @@ const Comments = () => {
           <div className={classes.userINFO}>
             <img src={Ellipse} alt="img" />
             <div className={classes.userNAMES}>
-              <h3 className={classes.name} id="NAME"></h3>
+              <h3 className={classes.name} id="NAME">
+                {user.name}
+              </h3>
               <h5 className={classes.username} id="USERNAME">
-                {post}
+                {user.email}
               </h5>
             </div>
           </div>
-          <p className={classes.post} id="post"></p>
+          <p className={classes.post} id="post">
+            {post}
+          </p>
           <hr id="hr1" class={classes.hr1} />
           <div className={classes.viewallCOMMENTS}>See Comments</div>
           <div>
