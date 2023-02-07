@@ -1,39 +1,26 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import classes from "./Posts.module.css";
 import Ellipse from "./Ellipse.png";
 import Vector from "./Vector.png";
 
-const Posts = () => {
+const PostsList = (props) => {
+  const navigate = useNavigate();
   const user = JSON.parse(localStorage.userinfo);
-
-  const [PostsArray, setPostsArray] = useState([]);
-  useEffect(() => {
-    const Fetch = async () => {
-      const response = await fetch(
-        `https://jsonplaceholder.typicode.com/users/${user.id}/posts`
-      );
-      const Response = await response.json();
-      setPostsArray(Response);
-    };
-    Fetch();
-  }, []);
-
-  const seeComments = (x, y) => {
-    console.log(x);
+  const [postComments, setpostComments] = useState([]);
+  const SeeComments = async (id, body) => {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/users/${id}/posts`
+    );
+    const Response = await response.json();
+    setpostComments(Response);
+    navigate(`./Comments/?postID=${id}`, { state: { body } });
   };
 
   return (
     <Fragment>
-      <div className={classes.enclosing}>
-        <div className={classes.container}>
-          <h1 className={classes.title}>Discover</h1>
-          <p className={classes.paragraph}>
-            <strong>WHAT'S NEW TODAY</strong>
-          </p>
-        </div>
-      </div>
-      {PostsArray &&
-        PostsArray.map((post) => (
+      {props.posts &&
+        props.posts.map((post) => (
           <div key={post.id} className={classes.posts_div}>
             <div className={classes.userINFO}>
               <img src={Ellipse} alt="img" />
@@ -44,8 +31,7 @@ const Posts = () => {
             </div>
             <p
               className={classes.post}
-              id={post.id}
-              onClick={() => seeComments(post.id, post.body)}
+              onClick={() => SeeComments(post.id, post.body)}
             >
               {post.body}
             </p>
@@ -67,4 +53,4 @@ const Posts = () => {
   );
 };
 
-export default Posts;
+export default PostsList;

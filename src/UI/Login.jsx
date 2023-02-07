@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Login.module.css";
 
-const Login = (event) => {
+const Login = () => {
   const navigate = useNavigate();
   const loginHandler = async (event) => {
     try {
