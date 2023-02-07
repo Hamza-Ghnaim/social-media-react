@@ -1,10 +1,17 @@
 import React, { Fragment } from "react";
 import classes from "./Posts.module.css";
+import { useNavigate } from "react-router-dom";
 import Ellipse from "./Ellipse.png";
 import Vector from "./Vector.png";
 
 const PostContent = (props) => {
   const user = JSON.parse(localStorage.userinfo);
+
+  const seeComments = (content) => {
+    console.log(content);
+    // const navigate = useNavigate();
+    // navigate("./Comments");
+  };
 
   return (
     <Fragment>
@@ -19,7 +26,7 @@ const PostContent = (props) => {
         <p
           className={classes.post}
           id={props.content.id}
-          onclick="go_to_comments(this)"
+          onClick={() => seeComments(props.key)}
         >
           {props.content.body}
         </p>
@@ -32,7 +39,6 @@ const PostContent = (props) => {
             className={classes.comment}
             type="text"
             placeholder="Add comment..."
-            onkeydown="postCOMMENT(this)"
           />
         </div>
         <hr className={classes.hr2} />

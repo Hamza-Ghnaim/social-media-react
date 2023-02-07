@@ -3,7 +3,7 @@ import PostContent from "./PostContent";
 
 const Discover = (props) => {
   // console.log(props);
-  console.log(props.posts);
+  // console.log(props.posts);
   return (
     <Fragment>
       {props.posts.map((post) => (

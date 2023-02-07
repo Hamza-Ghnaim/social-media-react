@@ -1,5 +1,5 @@
 body {
-  height: 55vh;
+  height: 100%;
   /* width: 100rem; */
   margin: 0;
   padding: 0;
@@ -40,7 +40,7 @@ body {
 }
 
 .enclosing {
-  height: 50rem;
+  height: 55vh;
   width: 18.5rem;
   /* width: 100%; */
   display: flex;
