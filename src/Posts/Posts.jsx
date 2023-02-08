@@ -5,8 +5,11 @@ import Button from "../UI/Button";
 
 const Posts = () => {
   const user = JSON.parse(localStorage.userinfo);
-
+  const [clicked, setclicked] = useState(false);
   const [PostsArray, setPostsArray] = useState([]);
+  const addPOST = () => {
+    setclicked(true);
+  };
   useEffect(() => {
     const Fetch = async () => {
       const response = await fetch(
@@ -20,6 +23,7 @@ const Posts = () => {
 
   return (
     <Fragment>
+      {clicked && <AddPost />}
       <div className={classes.enclosing}>
         <div className={classes.container}>
           <h1 className={classes.title}>Discover</h1>
@@ -29,7 +33,7 @@ const Posts = () => {
         </div>
       </div>
       <PostsList posts={PostsArray} />
-      <Button />
+      <Button onButton={addPOST} />
     </Fragment>
   );
 };
