@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import PostsList from "./PostsList";
 import classes from "./Posts.module.css";
+import AddPost from "./AddPost";
 import Button from "../UI/Button";
 
 const Posts = () => {

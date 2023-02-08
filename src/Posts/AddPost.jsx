@@ -13,12 +13,12 @@ const Overlay = (props) => {
 
 const AddPost = () => {
   return (
-    <Frgment>
+    <Fragment>
       {ReactDOM.createPortal(
         <Backdrop />,
         document.getElementById("backdrop-root")
       )}
-    </Frgment>
+    </Fragment>
   );
 };
 
