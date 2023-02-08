@@ -133,6 +133,18 @@ h5 {
   color: #000000;
 }
 
+.usernametop {
+  margin-left: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .username {
   margin-left: 5px;
   font-family: "Roboto";

@@ -38,7 +38,7 @@ const Comments = () => {
               <h3 className={classes.name} id="NAME">
                 {user.name}
               </h3>
-              <h5 className={classes.username} id="USERNAME">
+              <h5 className={classes.usernametop} id="USERNAME">
                 {user.email}
               </h5>
             </div>
