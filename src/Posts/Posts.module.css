@@ -65,7 +65,7 @@ body {
   padding-right: 5px;
 }
 
-.comment-holder {
+.Posts_comment-holder {
   display: flex;
   flex-direction: row;
   justify-content: left;

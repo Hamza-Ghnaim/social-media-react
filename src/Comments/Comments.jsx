@@ -55,7 +55,6 @@ const Comments = () => {
               className={classes.comment}
               type="text"
               placeholder="Add comment..."
-              disabled
             />
           </div>
           <hr className={classes.hr2} id="hr2" />
