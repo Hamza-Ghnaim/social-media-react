@@ -19,7 +19,7 @@ const Comments = () => {
       setComments(Response);
     };
     Fetch();
-  }, []);
+  });
   const post = useLocation().state.body;
   return (
     <Fragment>
@@ -46,7 +46,7 @@ const Comments = () => {
           <p className={classes.post} id="post">
             {post}
           </p>
-          <hr id="hr1" class={classes.hr1} />
+          <hr id="hr1" className={classes.hr1} />
           <div className={classes.viewallCOMMENTS}>See Comments</div>
           <div className={classes.Posts_comment_holder}>
             <img src={Vector} alt="img" />
@@ -63,7 +63,7 @@ const Comments = () => {
         </div>
         {comments &&
           comments.map((comment) => (
-            <div className={classes.addedCOMMENTDIV}>
+            <div key={comment.id} className={classes.addedCOMMENTDIV}>
               <div className={classes.commenterINFO}>
                 <img className={classes.photo} src={Ellipse} alt="img" />
                 <div className={classes.commentorNAMES}>

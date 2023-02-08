@@ -81,11 +81,16 @@ h5 {
   margin: 0;
 }
 .userINFO {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
+}
+
+.userINFO img {
+  width: 30px;
+  height: 30px;
 }
 .commenterINFO {
   display: flex;
@@ -95,15 +100,22 @@ h5 {
   padding-bottom: 50px;
 }
 .userNAMES {
-  width: 100%;
+  width: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
 }
 .commentorNAMES {
+  margin-top: 11px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
   /* display: inline-block; */
-  width: 90vh;
+  /* width: 90vh; */
   /* height: 100%; */
   /* flex-direction: column; */
   /* justify-content: center; */
@@ -122,6 +134,7 @@ h5 {
 }
 
 .username {
+  margin-left: 5px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -250,6 +263,7 @@ hr {
 }
 
 .commenterName {
+  padding-left: 5px;
   width: 100%;
   font-family: "Roboto";
   font-style: normal;

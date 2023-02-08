@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Posts.module.css";
 import Ellipse from "./Ellipse.png";
@@ -7,13 +7,7 @@ import Vector from "./Vector.png";
 const PostsList = (props) => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.userinfo);
-  const [postComments, setpostComments] = useState([]);
   const SeeComments = async (id, body) => {
-    const response = await fetch(
-      `https://jsonplaceholder.typicode.com/users/${id}/posts`
-    );
-    const Response = await response.json();
-    setpostComments(Response);
     navigate(`./Comments/?postID=${id}`, { state: { body } });
   };
 

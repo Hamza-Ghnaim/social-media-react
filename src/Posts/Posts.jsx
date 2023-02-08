@@ -15,7 +15,7 @@ const Posts = () => {
       setPostsArray(Response);
     };
     Fetch();
-  }, []);
+  });
 
   return (
     <Fragment>
