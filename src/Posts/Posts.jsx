@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import PostsList from "./PostsList";
 import classes from "./Posts.module.css";
+import Button from "../UI/Button";
 
 const Posts = () => {
   const user = JSON.parse(localStorage.userinfo);
@@ -28,6 +29,7 @@ const Posts = () => {
         </div>
       </div>
       <PostsList posts={PostsArray} />
+      <Button />
     </Fragment>
   );
 };

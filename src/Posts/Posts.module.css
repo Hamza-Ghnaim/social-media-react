@@ -187,7 +187,7 @@ hr {
 }
 .create_post_btn_container {
   position: fixed;
-  width: 100%;
+  width: 80vh;
   height: 55px;
   background: white;
   display: flex;
