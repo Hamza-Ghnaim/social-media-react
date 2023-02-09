@@ -3,14 +3,20 @@ import PostsList from "./PostsList";
 import classes from "./Posts.module.css";
 import AddPost from "./AddPost";
 import Button from "../UI/Button";
-
 const Posts = () => {
   const user = JSON.parse(localStorage.userinfo);
   const [clicked, setclicked] = useState(false);
   const [PostsArray, setPostsArray] = useState([]);
+  // const [newPost, setnewPost] = useState("");
   const addPOST = () => {
     setclicked(true);
   };
+  const setPostContent = (newPostArray) => {
+    setPostsArray([...PostsArray, newPostArray]);
+    console.log("from the posts again : ");
+    console.log(PostsArray);
+  };
+
   useEffect(() => {
     const Fetch = async () => {
       const response = await fetch(
@@ -21,10 +27,12 @@ const Posts = () => {
     };
     Fetch();
   });
-
+  // const setPostContent = () => {
+  //   console.log("from inside the posts component");
+  // };
   return (
     <Fragment>
-      {clicked && <AddPost />}
+      {clicked && <AddPost onAddPost={setPostContent} />}
       <div className={classes.enclosing}>
         <div className={classes.container}>
           <h1 className={classes.title}>Discover</h1>
@@ -38,5 +46,4 @@ const Posts = () => {
     </Fragment>
   );
 };
-
 export default Posts;
