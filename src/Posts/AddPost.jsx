@@ -17,8 +17,12 @@ const AddPost = (props) => {
     });
   };
   const submitPost = () => {
-    props.onAddPost(content);
-    props.onBTNCLICK();
+    if (content.body.trim().length !== 0) {
+      props.onAddPost(content);
+      props.onBTNCLICK();
+    } else {
+      alert("pleas enter something in the text area");
+    }
     // console.log(content);
   };
   return (
