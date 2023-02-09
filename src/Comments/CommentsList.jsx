@@ -3,17 +3,22 @@ import Ellipse from "../Posts/Ellipse.png";
 import classes from "./Comments.module.css";
 
 const CommentsList = (props) => {
+  const user = JSON.parse(localStorage.userinfo);
   return (
     <Fragment>
-      <div className={classes.addedCOMMENT}>
-        <div className={classes.userINFO}>
-          <img className={classes.photo} src={Ellipse} alt="img" />
-          <div className={classes.userNAMES}>
-            <h3 className={classes.name}>$user.name</h3>
-            <p className={classes.addedCOMMENT}>$content</p>
+      {props.data.map((comment) => (
+        <Fragment key={Math.random() + Date.now()}>
+          <div className={classes.addedCOMMENT}>
+            <div className={classes.userINFO}>
+              <img className={classes.photo} src={Ellipse} alt="img" />
+              <div className={classes.userNAMES}>
+                <h3 className={classes.name}>{user.name}</h3>
+                <p className={classes.addedCOMMENT}>{comment.body}</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </Fragment>
+      ))}
     </Fragment>
   );
 };

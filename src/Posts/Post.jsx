@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Posts.module.css";
 import Ellipse from "./Ellipse.png";
-import Vector from "./Vector.png";
+import NewComment from "../Comments/NewComment";
 // import CommentsList from "../Comments/CommentsList";
 
 const PostsList = (props) => {
@@ -13,25 +13,7 @@ const PostsList = (props) => {
     navigate(`./Comments/?postID=${id}`, { state: { body } });
   };
 
-  const postComment = (event) => {
-    if (
-      event.key === "Enter" &&
-      event.target.value.trim().length !== 0 &&
-      event.target.value !== null
-    ) {
-      // console.log(event.target.value);
-      let commentContent = document.getElementById(event.target.value);
-      const newDiv = document.createElement("div");
-      newDiv.className = "addedCOMMENT";
-      newDiv.innerHTML = `
-        <p class = "addedCOMMENT">${commentContent}</p>
-         `;
-      const reference = event.target.parentNode;
-      // console.log(event.target.parentNode);
-      reference.insertAdjacentElement("beforeBegin", newDiv);
-      event.target.value = " ";
-    }
-  };
+  // const postComment = (event) => {};
 
   return (
     <Fragment>
@@ -51,16 +33,7 @@ const PostsList = (props) => {
         </p>
         <hr id="hr1" className={classes.hr1} />
         <div className={classes.viewallCOMMENTS}>See Comments</div>
-        <div className={`${classes["comment-holder"]}`}>
-          <img src={Vector} alt="img" />
-          <input
-            id="comment"
-            className={classes.comment}
-            type="text"
-            placeholder="Add comment..."
-            onKeyDown={postComment}
-          />
-        </div>
+        <NewComment />
         <hr className={classes.hr2} />
       </div>
     </Fragment>

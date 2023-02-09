@@ -3,6 +3,7 @@ import Post from "./Post";
 import classes from "./Posts.module.css";
 import AddPost from "./AddPost";
 import Button from "../UI/Button";
+import CommentsList from "../Comments/CommentsList";
 const Posts = () => {
   const user = JSON.parse(localStorage.userinfo);
   const [clicked, setclicked] = useState(false);
