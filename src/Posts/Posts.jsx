@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import PostsList from "./PostsList";
+import Post from "./Post";
 import classes from "./Posts.module.css";
 import AddPost from "./AddPost";
 import Button from "../UI/Button";
@@ -42,7 +42,12 @@ const Posts = () => {
           </p>
         </div>
       </div>
-      <PostsList posts={PostsArray} />
+      {PostsArray &&
+        PostsArray.map((post) => (
+          <Fragment key={post.id}>
+            <Post posts={PostsArray} data={post} />
+          </Fragment>
+        ))}
       <Button onButton={addPOST} />
     </Fragment>
   );
