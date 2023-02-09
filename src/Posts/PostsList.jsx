@@ -1,15 +1,28 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Posts.module.css";
 import Ellipse from "./Ellipse.png";
 import Vector from "./Vector.png";
+import CommentsList from "../Comments/CommentsList";
 
 const PostsList = (props) => {
+  const [commentContent, setcommentContent] = useState("");
   // console.log(props.posts;
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.userinfo);
   const SeeComments = async (id, body) => {
     navigate(`./Comments/?postID=${id}`, { state: { body } });
+  };
+  const postComment = (event) => {
+    if (
+      event.key === "Enter" &&
+      event.target.value.trim().length !== 0 &&
+      event.target.value !== null
+    ) {
+      // console.log(event.target.value);
+      setcommentContent(event.target.value);
+      event.target.value = "";
+    }
   };
 
   return (
@@ -39,8 +52,11 @@ const PostsList = (props) => {
                 className={classes.comment}
                 type="text"
                 placeholder="Add comment..."
+                onKeyDown={postComment}
               />
             </div>
+            {commentContent && <CommentsList />}
+
             <hr className={classes.hr2} />
           </div>
         ))}

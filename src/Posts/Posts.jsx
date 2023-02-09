@@ -27,7 +27,7 @@ const Posts = () => {
   // };
 
   const setPostContent = (newPostArray) => {
-    setPostsArray([...PostsArray, newPostArray]);
+    setPostsArray([newPostArray, ...PostsArray]);
     // console.log(PostsArray);
   };
 
