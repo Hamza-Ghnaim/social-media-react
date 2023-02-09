@@ -5,6 +5,7 @@ import Ellipse from "./Ellipse.png";
 import Vector from "./Vector.png";
 
 const PostsList = (props) => {
+  // console.log(props.posts;
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.userinfo);
   const SeeComments = async (id, body) => {

@@ -9,12 +9,7 @@ const Posts = () => {
   const [PostsArray, setPostsArray] = useState([]);
   // const [newPost, setnewPost] = useState("");
   const addPOST = () => {
-    setclicked(true);
-  };
-  const setPostContent = (newPostArray) => {
-    setPostsArray([...PostsArray, newPostArray]);
-    console.log("from the posts again : ");
-    console.log(PostsArray);
+    setclicked(!clicked);
   };
 
   useEffect(() => {
@@ -26,13 +21,19 @@ const Posts = () => {
       setPostsArray(Response);
     };
     Fetch();
-  });
+  }, []);
   // const setPostContent = () => {
   //   console.log("from inside the posts component");
   // };
+
+  const setPostContent = (newPostArray) => {
+    setPostsArray([...PostsArray, newPostArray]);
+    // console.log(PostsArray);
+  };
+
   return (
     <Fragment>
-      {clicked && <AddPost onAddPost={setPostContent} />}
+      {clicked && <AddPost onAddPost={setPostContent} onBTNCLICK={addPOST} />}
       <div className={classes.enclosing}>
         <div className={classes.container}>
           <h1 className={classes.title}>Discover</h1>
