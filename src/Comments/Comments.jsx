@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import Ellipse from "../Posts/Ellipse.png";
 import Vector from "../Posts/Vector.png";
@@ -7,20 +7,26 @@ import classes from "./Comments.module.css";
 
 const Comments = () => {
   const user = JSON.parse(localStorage.userinfo);
+  const [Post,setpost] = useState("");
   const [comments, setComments] = useState([]);
   const [searchParams] = useSearchParams();
   const postID = +searchParams.get("postID");
   useEffect(() => {
     const Fetch = async () => {
-      const response = await fetch(
+      const response1 = await fetch(
+        `https://jsonplaceholder.typicode.com/posts/${postID}/`
+      );
+      const Response1 = await response1.json();
+      setpost(Response1)
+      const response2 = await fetch(
         `https://jsonplaceholder.typicode.com/posts/${postID}/comments`
       );
-      const Response = await response.json();
-      setComments(Response);
+      const Response2 = await response2.json();
+      setComments(Response2);
     };
     Fetch();
   });
-  const post = useLocation().state.body;
+  const post = Post.body
   return (
     <Fragment>
       <div className={classes.enclosing}>

@@ -9,8 +9,9 @@ const PostsList = (props) => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.userinfo);
 
-  const SeeComments = async (id, body) => {
-    navigate(`./Comments/?postID=${id}`, { state: { body } });
+  const SeeComments = async (id) => {
+    // navigate(`./Comments/?postID=${id}`, { state: { body } });
+    navigate(`./Comments/?postID=${id}`);
   };
 
   // const postComment = (event) => {};
@@ -27,7 +28,7 @@ const PostsList = (props) => {
         </div>
         <p
           className={classes.post}
-          onClick={() => SeeComments(props.data.id, props.data.body)}
+          onClick={() => SeeComments(props.data.id)}
         >
           {props.data.body}
         </p>
