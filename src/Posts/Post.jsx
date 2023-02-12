@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Posts.module.css";
 import Ellipse from "./Ellipse.png";

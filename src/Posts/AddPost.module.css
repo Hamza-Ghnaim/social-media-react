@@ -19,7 +19,7 @@
 }
 
 .modal textarea {
-  width: 75vh;
+  width: 59vh;
   height: 50vh;
 }
 
@@ -44,7 +44,7 @@
 }
 .createPost_container {
   z-index: 1;
-  width: 500px;
+  width: 600px;
   height: 100%;
   top: 0;
 }
