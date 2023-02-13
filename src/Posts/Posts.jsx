@@ -3,11 +3,14 @@ import Post from "./Post";
 import classes from "./Posts.module.css";
 import AddPost from "./AddPost";
 import Button from "../UI/Button";
+import SearchBar from "./SearchBar";
 const Posts = () => {
+
   const user = JSON.parse(localStorage.userinfo);
   const [postsNum,setpostsNum]=useState(5);
   const [clicked, setclicked] = useState(false);
   const [PostsArray, setPostsArray] = useState([]);
+  // const [searchContent,setsearchContent]=useState("")
   // const [newPost, setnewPost] = useState("");
   const addPOST = () => {
     setclicked(!clicked);
@@ -35,16 +38,25 @@ const Posts = () => {
     setPostsArray([newPostArray, ...PostsArray]);
     // console.log(PostsArray);
   };
-
+  const getPost=(searchedContent)=>{
+    // setpostsNum(PostsArray.length)
+    // console.log(PostsArray.length);
+    // setsearchContent
+    // console.log(PostsArray[0].body);
+    // setPostsArray(PostsArray.slice(0,1))
+  }
   return (
     <Fragment>
+  
       {clicked && <AddPost onAddPost={setPostContent} onBTNCLICK={addPOST} />}
       <div className={classes.enclosing}>
         <div className={classes.container}>
+          
           <h1 className={classes.title}>Discover</h1>
           <p className={classes.paragraph}>
             <strong>WHAT'S NEW TODAY</strong>
           </p>
+          <SearchBar onSearch={getPost}/>
           <h2 className={classes.loader} onClick={addMorePosts}>... Load more content ...</h2>
         <br />
         </div>
@@ -52,7 +64,7 @@ const Posts = () => {
       {PostsArray &&
         (PostsArray.slice(0,postsNum)).map((post) => (
           <Fragment key={post.id}>
-            <Post posts={PostsArray} data={post} />
+            <Post data={post}/>
           </Fragment>
         ))}
       <Button onButton={addPOST} />

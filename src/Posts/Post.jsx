@@ -13,8 +13,6 @@ const PostsList = (props) => {
     navigate(`./Comments/?postID=${id}`);
   };
 
-  // const postComment = (event) => {};
-
   return (
     <Fragment>
       <div className={classes.posts_div}>
