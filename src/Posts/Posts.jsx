@@ -10,7 +10,7 @@ const Posts = () => {
   const [postsNum,setpostsNum]=useState(5);
   const [clicked, setclicked] = useState(false);
   const [PostsArray, setPostsArray] = useState([]);
-  // const [searchContent,setsearchContent]=useState("")
+  const [searchContent,setsearchContent]=useState("")
   // const [newPost, setnewPost] = useState("");
   const addPOST = () => {
     setclicked(!clicked);
@@ -39,11 +39,9 @@ const Posts = () => {
     // console.log(PostsArray);
   };
   const getPost=(searchedContent)=>{
-    // setpostsNum(PostsArray.length)
-    // console.log(PostsArray.length);
-    // setsearchContent
-    // console.log(PostsArray[0].body);
-    // setPostsArray(PostsArray.slice(0,1))
+    setpostsNum(1);
+    setsearchContent(searchedContent);
+    // setPostsArray(PostsArray.slice(0,1));
   }
   return (
     <Fragment>
@@ -62,7 +60,7 @@ const Posts = () => {
         </div>
       </div>
       {PostsArray &&
-        (PostsArray.slice(0,postsNum)).map((post) => (
+        ((PostsArray.filter((obj)=>{return obj.body.includes(searchContent)})).slice(0,postsNum)).map((post) => (
           <Fragment key={post.id}>
             <Post data={post}/>
           </Fragment>
