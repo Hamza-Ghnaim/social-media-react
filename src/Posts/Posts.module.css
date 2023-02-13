@@ -272,3 +272,7 @@ hr {
   display: flex;
   align-items: center;
 }
+
+.loader{
+  color:rgb(206, 127, 255);
+}

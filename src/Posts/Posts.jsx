@@ -45,7 +45,7 @@ const Posts = () => {
           <p className={classes.paragraph}>
             <strong>WHAT'S NEW TODAY</strong>
           </p>
-          <h2 onClick={addMorePosts}>... Load more content ...</h2>
+          <h2 className={classes.loader} onClick={addMorePosts}>... Load more content ...</h2>
         <br />
         </div>
       </div>
