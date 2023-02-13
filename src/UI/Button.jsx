@@ -5,7 +5,7 @@ const Button = (props) => {
     props.onButton();
   };
   return (
-    <Fragment>
+    <>
       <div className={classes.create_post_btn_container}>
         <hr />
         <button
@@ -16,7 +16,7 @@ const Button = (props) => {
           +
         </button>
       </div>
-    </Fragment>
+    </>
   );
 };
 

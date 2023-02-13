@@ -1,5 +1,4 @@
 import React, { Fragment, useState, useEffect } from "react";
-// import { useLocation } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import Ellipse from "../Posts/Ellipse.png";
 import Vector from "../Posts/Vector.png";

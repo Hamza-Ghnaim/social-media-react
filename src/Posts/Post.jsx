@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import classes from "./Posts.module.css";
 import Ellipse from "./Ellipse.png";
 import NewComment from "../Comments/NewComment";
-// import CommentsList from "../Comments/CommentsList";
 
 const PostsList = (props) => {
   const navigate = useNavigate();

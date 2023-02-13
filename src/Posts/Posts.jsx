@@ -5,6 +5,7 @@ import AddPost from "./AddPost";
 import Button from "../UI/Button";
 const Posts = () => {
   const user = JSON.parse(localStorage.userinfo);
+  const [postsNum,setpostsNum]=useState(5);
   const [clicked, setclicked] = useState(false);
   const [PostsArray, setPostsArray] = useState([]);
   // const [newPost, setnewPost] = useState("");
@@ -25,6 +26,10 @@ const Posts = () => {
   // const setPostContent = () => {
   //   console.log("from inside the posts component");
   // };
+  const addMorePosts = ()=>{
+    setpostsNum(postsNum+5)
+
+  }
 
   const setPostContent = (newPostArray) => {
     setPostsArray([newPostArray, ...PostsArray]);
@@ -40,10 +45,12 @@ const Posts = () => {
           <p className={classes.paragraph}>
             <strong>WHAT'S NEW TODAY</strong>
           </p>
+          <h2 onClick={addMorePosts}>... Load more content ...</h2>
+        <br />
         </div>
       </div>
       {PostsArray &&
-        PostsArray.map((post) => (
+        (PostsArray.slice(0,postsNum)).map((post) => (
           <Fragment key={post.id}>
             <Post posts={PostsArray} data={post} />
           </Fragment>
